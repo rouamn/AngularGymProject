@@ -1,0 +1,20 @@
+<div>
+    <h2>Add Course</h2>
+    <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="Nom">Name</label>
+        <input id="Nom" formControlName="Nom" />
+      </div>
+      <div>
+        <label for="Description">Description</label>
+        <input id="Description" formControlName="Description" />
+      </div>
+      <div>
+        <label for="Duree">Duration</label>
+        <input id="Duree" formControlName="Duree" />
+      </div>
+      <button type="submit" [disabled]="courseForm.invalid">Add Course</button>
+    </form>
+    <p *ngIf="message">{{ message }}</p>
+  </div>
+  

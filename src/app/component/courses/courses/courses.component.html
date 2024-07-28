@@ -1,0 +1,28 @@
+<button (click)=" goToAddCourse()">add Course</button>
+
+<div *ngIf="courses.length">
+    <h2>Courses</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Duration</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses">
+          <td>{{ course.nom }}</td>
+          <td>{{ course.description }}</td>
+          <td>{{ course.duree }}</td>
+          <td>
+            <button  (click)="goToComopnent(course.id)">Detail</button>
+            <button>Update</button>
+            <button >Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
