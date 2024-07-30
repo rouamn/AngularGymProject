@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticateRequest } from 'src/app/models/AuthenticateRequest';
 import { User } from 'src/app/models/User';
 import { UserService } from 'src/Services/user.service';
@@ -12,7 +13,7 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   login() {
     const request: AuthenticateRequest = {
@@ -25,7 +26,7 @@ export class LoginComponent {
         console.log('Authentication successful. Token:', response.token);
         localStorage.setItem('authToken', response.token);
         // Navigate to a different page or show a success message
-        // this.router.navigate(['/home']);
+        this.router.navigate(['/dashboard']);
       },
       error => {
         console.error('Authentication failed:', error);

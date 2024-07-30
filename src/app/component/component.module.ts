@@ -18,6 +18,10 @@ import { AddCourseComponent } from './courses/add-course/add-course.component';
 import { DetailCourseComponent } from './courses/detail-course/detail-course.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { AddUserComponent } from './user/add-user/add-user.component';
+
+import { UpdateUserComponent } from './user/update-user/update-user.component';
 
 @NgModule({
   imports: [
@@ -40,7 +44,9 @@ import { LoginComponent } from './login/login.component';
     AddCourseComponent,
     DetailCourseComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    UserListComponent,
+    UpdateUserComponent
   ],
 })
 export class ComponentsModule { }

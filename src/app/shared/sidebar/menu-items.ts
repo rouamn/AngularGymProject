@@ -1,7 +1,7 @@
 import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
- 
+
   {
     path: '/dashboard',
     title: 'Dashboard',
@@ -11,54 +11,54 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/component/alert',
-    title: 'Alert',
+    path: '/component/users',
+    title: 'users',
     icon: 'bi bi-bell',
     class: '',
     extralink: false,
     submenu: []
   },
   {
-    path: '/component/badges',
-    title: 'Badges',
+    path: '/component/courses',
+    title: 'courses',
     icon: 'bi bi-patch-check',
     class: '',
     extralink: false,
     submenu: []
   },
   {
-    path: '/component/buttons',
-    title: 'Button',
+    path: '/component/events',
+    title: 'events',
     icon: 'bi bi-hdd-stack',
     class: '',
     extralink: false,
     submenu: []
   },
   {
-    path: '/component/card',
-    title: 'Card',
+    path: '/component/abonnements',
+    title: 'abonnements',
     icon: 'bi bi-card-text',
     class: '',
     extralink: false,
     submenu: []
   },
   {
-    path: '/component/dropdown',
-    title: 'Dropdown',
+    path: '/component/planning',
+    title: 'planning',
     icon: 'bi bi-menu-app',
     class: '',
     extralink: false,
     submenu: []
   },
   {
-    path: '/component/pagination',
-    title: 'Pagination',
+    path: '/component/paiement',
+    title: 'paiement',
     icon: 'bi bi-dice-1',
     class: '',
     extralink: false,
     submenu: []
   },
-  {
+ /* {
     path: '/component/nav',
     title: 'Nav',
     icon: 'bi bi-pause-btn',
@@ -81,5 +81,5 @@ export const ROUTES: RouteInfo[] = [
     class: '',
     extralink: false,
     submenu: []
-  }
+  }*/
 ];

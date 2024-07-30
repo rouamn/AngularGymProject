@@ -19,6 +19,8 @@ export class UserService {
   authenticate(request: AuthenticateRequest): Observable<{ token: string }> {
     return this.http.post<{ token: string }>(`${this.apiUrl}authenticate`, request);
   }
-
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}AllUsers`);
+  }
 
 }

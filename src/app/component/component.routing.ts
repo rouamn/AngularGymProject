@@ -10,6 +10,7 @@ import { CardsComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
 import { CoursesComponent } from './courses/courses/courses.component';
 import { AddCourseComponent } from './courses/add-course/add-course.component';
+import { UserListComponent } from './user/user-list/user-list.component';
 
 
 
@@ -22,23 +23,23 @@ export const ComponentsRoutes: Routes = [
 				component: TableComponent
 			},
 			{
-				path: 'card',
+				path: 'abonnements',
 				component: CardsComponent
 			},
 			{
-				path: 'pagination',
+				path: 'paiement',
 				component: NgbdpaginationBasicComponent
 			},
 			{
-				path: 'badges',
+				path: 'courses',
 				component: CoursesComponent
 			},
 			{
-				path: 'alert',
-				component: NgbdAlertBasicComponent
+				path: 'users',
+				component: UserListComponent
 			},
 			{
-				path: 'dropdown',
+				path: 'planning',
 				component: NgbdDropdownBasicComponent
 			},
 			{
@@ -46,14 +47,14 @@ export const ComponentsRoutes: Routes = [
 				component: NgbdnavBasicComponent
 			},
 			{
-				path: 'buttons',
+				path: 'events',
 				component: NgbdButtonsComponent
 			},
 			{
 				path: 'add-course',
 				component: AddCourseComponent
 			},
-			
+
 		]
 	}
 ];

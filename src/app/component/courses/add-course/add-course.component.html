@@ -1,20 +1,44 @@
-<div>
-    <h2>Add Course</h2>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Ajouter un Cours</h4>
+    <h5 class="card-subtitle text-muted">Remplissez les détails du cours</h5>
     <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
-      <div>
-        <label for="Nom">Name</label>
-        <input id="Nom" formControlName="Nom" />
+      <div class="mb-3">
+        <label for="Nom" class="form-label">Nom</label>
+        <input
+          id="Nom"
+          formControlName="Nom"
+          class="form-control"
+          placeholder="Nom du cours"
+        />
       </div>
-      <div>
-        <label for="Description">Description</label>
-        <input id="Description" formControlName="Description" />
+      <div class="mb-3">
+        <label for="Description" class="form-label">Description</label>
+        <textarea
+          id="Description"
+          formControlName="Description"
+          class="form-control"
+          rows="3"
+          placeholder="Description du cours"
+        ></textarea>
       </div>
-      <div>
-        <label for="Duree">Duration</label>
-        <input id="Duree" formControlName="Duree" />
+      <div class="mb-3">
+        <label for="Duree" class="form-label">Durée</label>
+        <input
+          id="Duree"
+          formControlName="Duree"
+          class="form-control"
+          placeholder="Durée du cours"
+        />
       </div>
-      <button type="submit" [disabled]="courseForm.invalid">Add Course</button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="courseForm.invalid"
+      >
+        Ajouter le Cours
+      </button>
     </form>
-    <p *ngIf="message">{{ message }}</p>
+    <p *ngIf="message" class="mt-3 text-success">{{ message }}</p>
   </div>
-  
+</div>

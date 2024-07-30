@@ -1,60 +1,112 @@
-<section class="bg-primary text-white p-3 p-md-4 p-xl-5 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-  <div class="container d-flex justify-content-center align-items-center">
-    <div class="row justify-content-center align-items-center w-100">
-      <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
-        <div class="card border-0 shadow-sm rounded-4" style="width:100%; max-width: 650px; min-height: 550px;">
-          <div class="card-body p-3 p-md-4 p-xl-5">
-            <div class="row">
-              <div class="col-12">
-                <div class="mb-5 text-center">
-                  <h2 class="h3">Login</h2>
-                  <h3 class="fs-6 fw-normal text-secondary m-0">Enter your credentials to log in</h3>
-                </div>
-              </div>
-            </div>
+<!-- Section: Design Block for Login -->
+<section class="background-radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+  <style>
+    .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(650px circle at 0% 0%,
+          hsl(218, 41%, 35%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+          hsl(218, 41%, 45%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%);
+    }
+
+    #radius-shape-1, #radius-shape-2 {
+      position: absolute;
+      overflow: hidden;
+    }
+
+    #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      top: -60px;
+      left: -130px;
+      background: radial-gradient(#44006b, #ad1fff);
+    }
+
+    #radius-shape-2 {
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(#44006b, #ad1fff);
+    }
+
+    .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+      border-radius: 20px;
+      padding: 2.5rem; /* Increased padding */
+      max-width: 800px; /* Increased max width */
+      width: 100%;
+      min-height: 500px; /* Adjust as needed */
+    }
+
+    .form-outline {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-outline .form-label {
+      margin-bottom: 0.75rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.25rem;
+    }
+  </style>
+
+
+<div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+  <div class="row gx-lg-5 align-items-center mb-5">
+    <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+      <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+        Rejoignez notre salle de sport <br />
+        <span style="color: hsl(218, 81%, 75%)">et atteignez vos objectifs</span>
+      </h1>
+      <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+        Découvrez un espace dédié au bien-être et à la performance. Nos équipements modernes et notre équipe de professionnels sont à votre disposition pour vous aider à atteindre vos objectifs de fitness et de santé.
+      </p>
+    </div>
+
+    <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+      <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+      <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
             <form (ngSubmit)="login()">
-              <div class="row gy-3 overflow-hidden">
-                <div class="col-12">
-                  <div class="form-floating mb-4">
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      id="email"
-                      [(ngModel)]="email"
-                      placeholder="name@example.com"
-                      required
-                      style="height: 40px; padding: 0.5rem;"
-                    />
-                    <label for="email" class="form-label">Email</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating mb-4">
-                    <input
-                      type="password"
-                      class="form-control"
-                      name="password"
-                      id="password"
-                      [(ngModel)]="password"
-                      placeholder="Password"
-                      required
-                      style="height: 40px; padding: 0.5rem;"
-                    />
-                    <label for="password" class="form-label">Password</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="d-grid">
-                    <button class="btn bsb-btn-2xl btn-primary" type="submit">Login</button>
-                  </div>
-                </div>
+              <!-- Email input -->
+              <div data-mdb-input-init class="form-outline mb-3">
+                <input type="email" id="email" class="form-control" [(ngModel)]="email" placeholder="Adresse e-mail" name="email" required />
+                <label class="form-label" for="email">Adresse e-mail</label>
+              </div>
+
+              <!-- Password input -->
+              <div data-mdb-input-init class="form-outline mb-3">
+                <input type="password" id="password" class="form-control" [(ngModel)]="password" placeholder="Mot de passe" name="password" required />
+                <label class="form-label" for="password">Mot de passe</label>
+              </div>
+
+              <!-- Submit button -->
+              <div class="d-grid">
+                <button class="btn btn-primary btn-block mb-3" type="submit">Connexion</button>
               </div>
             </form>
+
             <div class="row">
               <div class="col-12">
-                <hr class="mt-5 mb-4 border-secondary-subtle">
-                <p class="m-0 text-secondary text-center">Don't have an account? <a href="#!" class="link-primary text-decoration-none">Sign up</a></p>
+                <hr class="mt-4 mb-3 border-secondary-subtle">
+                <p class="m-0 text-secondary text-center">
+                  Pas encore de compte ?
+                  <a [routerLink]="['/register']" class="link-primary text-decoration-none">Inscrivez-vous</a>
+                </p>
               </div>
             </div>
           </div>
@@ -63,3 +115,4 @@
     </div>
   </div>
 </section>
+<!-- Section: Design Block for Login -->
