@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CourseServiceService } from 'src/Services/course-service.service';
 
 @Component({
@@ -8,17 +8,18 @@ import { CourseServiceService } from 'src/Services/course-service.service';
   styleUrls: ['./detail-course.component.scss']
 })
 export class DetailCourseComponent {
+ 
   course: any;
 
   constructor(
     private route: ActivatedRoute,
-    private courseService: CourseServiceService
+    private courseService: CourseServiceService,private router:Router
   ) { }
 
   ngOnInit(): void {
     const courseId = this.route.snapshot.paramMap.get('id');
     if (courseId) {
-      this.courseService.getCourseById(+courseId).subscribe(
+      this.courseService.getCourseById(Number(courseId)).subscribe(
         data => {
           this.course = data;
         },
@@ -29,4 +30,7 @@ export class DetailCourseComponent {
     }
   }
 
+  goToComopnent(){
+    this.router.navigate(['component/courses'])
+  }
 }

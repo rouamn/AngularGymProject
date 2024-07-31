@@ -5,6 +5,7 @@ import { FullComponent } from './layouts/full/full.component';
 import { DetailCourseComponent } from './component/courses/detail-course/detail-course.component';
 import { RegisterComponent } from './component/register/register.component';
 import { LoginComponent } from './component/login/login.component';
+import { UpdateCourseComponent } from './component/courses/update-course/update-course.component';
 
 export const Approutes: Routes = [
   {
@@ -28,6 +29,7 @@ export const Approutes: Routes = [
   },
 
   { path: 'course/:id', component: DetailCourseComponent },
+  { path: 'update-course/:id', component: UpdateCourseComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   {

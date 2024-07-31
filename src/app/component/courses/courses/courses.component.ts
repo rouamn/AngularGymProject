@@ -20,9 +20,20 @@ export class CoursesComponent {
     });
   }
 
-
+  deleteCourse(course: any): void {
+    this.courseService.deleteCourse(course.idCours).subscribe(response => {
+      if (response === 'success') {
+        this.courses = this.courses.filter(c => c.idCours !== course.idCours);
+      } else {
+        console.error('Failed to delete course');
+      }
+    });
+  }
   goToComopnent(id:any){
     this.router.navigate(['course/',id])
+  }
+  goToUpdateCourse(id:any){
+    this.router.navigate(['update-course/',id])
   }
 
   goToAddCourse(){

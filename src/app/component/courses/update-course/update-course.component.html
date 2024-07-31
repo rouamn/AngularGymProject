@@ -1,1 +1,21 @@
-<p>update-course works!</p>
+<div *ngIf="course">
+    <h2>Edit Course</h2>
+    <form (ngSubmit)="updateCourse()">
+      <div>
+        <label for="nom">Nom:</label>
+        <input id="nom" [(ngModel)]="course.nom" name="nom">
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <input id="description" [(ngModel)]="course.description" name="description">
+      </div>
+      <div>
+        <label for="duree">Duration:</label>
+        <input id="duree" [(ngModel)]="course.duree" name="duree">
+      </div>
+      <!-- Add other fields as necessary -->
+      <button type="submit">Update Course</button>
+      <button (click)="goToComopnent()">Back</button>
+    </form>
+  </div>
+  

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CourseServiceService } from 'src/Services/course-service.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class AddCourseComponent {
   courseForm: FormGroup;
   message: string = '';
 
-  constructor(private courseService: CourseServiceService, private fb: FormBuilder) {
+  constructor(private courseService: CourseServiceService, private fb: FormBuilder,private router:Router) {
     this.courseForm = this.fb.group({
       Nom: [''],
       Description: [''],
@@ -25,6 +26,7 @@ export class AddCourseComponent {
         response => {
           this.message = response.Message;
           this.courseForm.reset();
+          this.router.navigate(['component/courses']); 
         },
         error => {
           console.error('Error adding course', error);
@@ -32,6 +34,10 @@ export class AddCourseComponent {
         }
       );
     }
+  }
+
+  goToComopnent(){
+    this.router.navigate(['component/courses'])
   }
 
 }
