@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseServiceService } from 'src/Services/course-service.service';
 
@@ -7,18 +7,18 @@ import { CourseServiceService } from 'src/Services/course-service.service';
   templateUrl: './update-course.component.html',
   styleUrls: ['./update-course.component.scss']
 })
-export class UpdateCourseComponent {
-
+export class UpdateCourseComponent implements OnInit {
   course: any = {
-    // Initialize course object with default values or leave it empty
-    title: '',
+    nom: '',
     description: '',
-    // Add other properties as needed
+    duree: ''
   };
+  message: string = '';
 
   constructor(
     private route: ActivatedRoute,
-    private courseService: CourseServiceService,private router:Router
+    private courseService: CourseServiceService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -40,8 +40,8 @@ export class UpdateCourseComponent {
     if (courseId) {
       this.courseService.updateCourse(+courseId, this.course).subscribe(
         data => {
-          console.log('Course updated successfully', data);
-          this.router.navigate(['component/courses']); 
+          this.message = 'Course updated successfully!';
+          this.router.navigate(['component/courses']);
         },
         error => {
           console.error('Error updating course', error);
@@ -50,7 +50,7 @@ export class UpdateCourseComponent {
     }
   }
 
-  goToComopnent(){
-    this.router.navigate(['component/courses'])
+  goToComponent(): void {
+    this.router.navigate(['component/courses']);
   }
 }

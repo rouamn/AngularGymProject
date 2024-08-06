@@ -1,1 +1,54 @@
-<p>add-user works!</p>
+<!-- add-user.component.html -->
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Ajouter un Utilisateur</h4>
+    <h5 class="card-subtitle text-muted">Entrez les détails de l'utilisateur</h5>
+    <form (ngSubmit)="addUser()">
+      <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input
+          id="nom"
+          [(ngModel)]="user.nom"
+          name="nom"
+          class="form-control"
+          placeholder="Nom de l'utilisateur"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="prenom" class="form-label">Prénom</label>
+        <input
+          id="prenom"
+          [(ngModel)]="user.prenom"
+          name="prenom"
+          class="form-control"
+          placeholder="Prénom de l'utilisateur"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          id="email"
+          [(ngModel)]="user.email"
+          name="email"
+          class="form-control"
+          placeholder="Email de l'utilisateur"
+          type="email"
+          required
+        />
+      </div>
+      <div data-mdb-input-init class="form-outline mb-3">
+        <input type="date" id="dateNaissance" class="form-control" [(ngModel)]="user.dateNaissance" placeholder="Date de naissance" name="dateNaissance" required />
+        <label class="form-label" for="dateNaissance">Date de naissance</label>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        Ajouter l'Utilisateur
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="goToComponent()">
+        Retour
+      </button>
+    </form>
+    <p *ngIf="message" class="mt-3 text-success">{{ message }}</p>
+  </div>
+</div>

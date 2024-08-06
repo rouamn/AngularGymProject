@@ -28,7 +28,26 @@
           id="Duree"
           formControlName="Duree"
           class="form-control"
-          placeholder="Durée du cours"
+          placeholder="Durée du cours (HH:mm:ss)"
+          type="text"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="InstructorName" class="form-label">Nom de l'Instructeur</label>
+        <input
+          id="InstructorName"
+          formControlName="InstructorName"
+          class="form-control"
+          placeholder="Nom de l'instructeur"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="CourseDate" class="form-label">Date du Cours</label>
+        <input
+          id="CourseDate"
+          formControlName="CourseDate"
+          class="form-control"
+          type="date"
         />
       </div>
       <button
@@ -38,7 +57,13 @@
       >
         Ajouter le Cours
       </button>
-      <button (click)="goToComopnent()">Back</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="goToComponent()"
+      >
+        Retour
+      </button>
     </form>
     <p *ngIf="message" class="mt-3 text-success">{{ message }}</p>
   </div>

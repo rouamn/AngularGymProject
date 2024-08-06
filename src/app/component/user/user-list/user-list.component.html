@@ -30,7 +30,7 @@
             <td>{{ user.telephone }}</td>
             <td><h5 class="mb-0 fw-normal">{{ user.role }}</h5></td>
             <td>
-              <button class="btn btn-danger btn-sm" >
+              <button class="btn btn-danger btn-sm" (click)="confirmDelete(user.idUtilisateur)">
                 Supprimer
               </button>
             </td>
@@ -40,3 +40,5 @@
     </div>
   </div>
 </div>
+
+  

@@ -21,12 +21,14 @@ import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { CourseServiceService } from 'src/Services/course-service.service';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SpinnerComponent,
+    HomepageComponent,
   ],
   imports: [
     CommonModule,

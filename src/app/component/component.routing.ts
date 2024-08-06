@@ -11,6 +11,10 @@ import { TableComponent } from './table/table.component';
 import { CoursesComponent } from './courses/courses/courses.component';
 import { AddCourseComponent } from './courses/add-course/add-course.component';
 import { UserListComponent } from './user/user-list/user-list.component';
+import { DetailCourseComponent } from './courses/detail-course/detail-course.component';
+import { LoginComponent } from './login/login.component';
+import { UpdateCourseComponent } from './courses/update-course/update-course.component';
+import { AddUserComponent } from './user/add-user/add-user.component';
 
 
 
@@ -54,6 +58,19 @@ export const ComponentsRoutes: Routes = [
 				path: 'add-course',
 				component: AddCourseComponent
 			},
+      {
+				path: 'course/:id',
+				component: DetailCourseComponent
+			},
+      {
+				path: 'update-course/:id',
+				component: UpdateCourseComponent
+			},
+      {
+				path: 'adduser',
+				component: AddUserComponent
+			},
+
 
 		]
 	}

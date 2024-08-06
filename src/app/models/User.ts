@@ -12,5 +12,5 @@ export class User {
   updatedAt?: Date;
   token?: string;
   resetPasswordToken?: string;
-  resetPasswordExpiry!: Date;
+  resetPasswordExpiry?: Date;
 }

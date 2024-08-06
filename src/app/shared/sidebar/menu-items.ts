@@ -34,6 +34,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+
   {
     path: '/component/abonnements',
     title: 'abonnements',
@@ -58,6 +59,9 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+ 
+
+
  /* {
     path: '/component/nav',
     title: 'Nav',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CourseServiceService } from 'src/Services/course-service.service';
 
@@ -12,21 +12,31 @@ export class AddCourseComponent {
   courseForm: FormGroup;
   message: string = '';
 
-  constructor(private courseService: CourseServiceService, private fb: FormBuilder,private router:Router) {
+  constructor(
+    private courseService: CourseServiceService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {
     this.courseForm = this.fb.group({
-      Nom: [''],
+      Nom: ['', Validators.required],
       Description: [''],
-      Duree: ['']
+      Duree: ['', Validators.required], // Add validation if needed
+      InstructorName: [''],
+      CourseDate: ['', Validators.required]
     });
   }
 
   onSubmit() {
     if (this.courseForm.valid) {
-      this.courseService.addCourse(this.courseForm.value).subscribe(
+      const courseData = this.courseForm.value;
+      // Convert duration string to a proper format if needed
+      // For example, you might need to convert HH:mm:ss to another format
+
+      this.courseService.addCourse(courseData).subscribe(
         response => {
           this.message = response.Message;
           this.courseForm.reset();
-          this.router.navigate(['component/courses']); 
+          this.router.navigate(['component/courses']);
         },
         error => {
           console.error('Error adding course', error);
@@ -36,8 +46,8 @@ export class AddCourseComponent {
     }
   }
 
-  goToComopnent(){
-    this.router.navigate(['component/courses'])
+  goToComponent() {
+    this.router.navigate(['component/courses']);
   }
 
 }

@@ -46,7 +46,8 @@ import { UpdateUserComponent } from './user/update-user/update-user.component';
     RegisterComponent,
     LoginComponent,
     UserListComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    AddUserComponent
   ],
 })
 export class ComponentsModule { }

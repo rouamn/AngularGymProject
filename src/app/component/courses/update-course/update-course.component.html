@@ -1,21 +1,49 @@
-<div *ngIf="course">
-    <h2>Edit Course</h2>
+<div *ngIf="course" class="card">
+  <div class="card-body">
+    <h4 class="card-title">Editer un Cours</h4>
+    <h5 class="card-subtitle text-muted">Modifiez les détails du cours</h5>
     <form (ngSubmit)="updateCourse()">
-      <div>
-        <label for="nom">Nom:</label>
-        <input id="nom" [(ngModel)]="course.nom" name="nom">
+      <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input
+          id="nom"
+          [(ngModel)]="course.nom"
+          name="nom"
+          class="form-control"
+          placeholder="Nom du cours"
+          required
+        />
       </div>
-      <div>
-        <label for="description">Description:</label>
-        <input id="description" [(ngModel)]="course.description" name="description">
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          id="description"
+          [(ngModel)]="course.description"
+          name="description"
+          class="form-control"
+          rows="3"
+          placeholder="Description du cours"
+          required
+        ></textarea>
       </div>
-      <div>
-        <label for="duree">Duration:</label>
-        <input id="duree" [(ngModel)]="course.duree" name="duree">
+      <div class="mb-3">
+        <label for="duree" class="form-label">Durée</label>
+        <input
+          id="duree"
+          [(ngModel)]="course.duree"
+          name="duree"
+          class="form-control"
+          placeholder="Durée du cours"
+          required
+        />
       </div>
-      <!-- Add other fields as necessary -->
-      <button type="submit">Update Course</button>
-      <button (click)="goToComopnent()">Back</button>
+      <button type="submit" class="btn btn-primary">
+        Mettre à jour le Cours
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="goToComponent()">
+        Retour
+      </button>
     </form>
+    <p *ngIf="message" class="mt-3 text-success">{{ message }}</p>
   </div>
-  
+</div>
